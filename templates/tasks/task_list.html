@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Mes tâches{% endblock %}
+
+{% block content %}
+<h1>Mes tâches</h1>
+
+{% if tasks %}
+<ul class="task-list">
+    {% for task in tasks %}
+    <li class="task {% if task.completed %}task--done{% endif %}">
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.description }}</p>
+        {% if task.completed %}
+            <span class="badge badge--done">Terminée</span>
+        {% else %}
+            <span class="badge badge--todo">À faire</span>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Aucune tâche pour le moment.</p>
+{% endif %}
+{% endblock %}

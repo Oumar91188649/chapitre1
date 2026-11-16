@@ -1,0 +1,56 @@
+:root {
+    --bleu: #1f4e79;
+    --gris: #f3f5f7;
+    --texte: #222;
+    --vert: #2e7d32;
+    --orange: #b26a00;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    color: var(--texte);
+    background: var(--gris);
+    line-height: 1.5;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: var(--bleu);
+}
+
+.site-header a { color: #fff; text-decoration: none; margin-left: 1rem; }
+.site-header .brand { margin-left: 0; font-weight: 700; font-size: 1.1rem; }
+.site-header a:hover { text-decoration: underline; }
+
+.container { max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+
+.task-list { list-style: none; padding: 0; margin: 0; }
+
+.task {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.9rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task h2 { margin: 0 0 0.3rem; font-size: 1.1rem; }
+.task p { margin: 0 0 0.6rem; color: #555; }
+.task--done h2 { text-decoration: line-through; color: #777; }
+
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+.badge--done { background: var(--vert); }
+.badge--todo { background: var(--orange); }
